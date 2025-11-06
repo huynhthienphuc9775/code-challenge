@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* index.css hoặc globals.css */
+.token-options::-webkit-scrollbar {
+  width: 6px;
+}
+.token-options::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+.token-options::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 3px;
+}
+.token-options {
+  scrollbar-width: thin;
+  scrollbar-color: #4b5563 #1f2937;
+}
