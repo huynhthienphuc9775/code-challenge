@@ -7,7 +7,10 @@ import { formatNumber, parseNumber } from "../utils";
 
 export default function SwapForm() {
   const { prices, loading } = useFetchPrices();
-  const tokens = useMemo(() => Array.from(new Set(prices.map((p) => p.currency))), [prices]);
+  const tokens = useMemo(
+    () => Array.from(new Set(prices.map((p) => p.currency))),
+    [prices]
+  );
 
   const [fromToken, setFromToken] = useState("ATOM");
   const [toToken, setToToken] = useState("USDC");
@@ -87,7 +90,7 @@ export default function SwapForm() {
     <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-900 to-gray-800 px-4">
       <div className="bg-gray-900 border border-gray-700 rounded-2xl p-6 w-full max-w-md shadow-2xl relative">
         <h2 className="text-2xl font-semibold text-white mb-6 text-center">
-          Currency Swap
+          Fancy Form
         </h2>
 
         <div className="flex flex-col gap-4 mb-4">
@@ -95,6 +98,7 @@ export default function SwapForm() {
           <div className="flex items-center gap-3">
             <TokenSelector
               tokens={tokens}
+              prices={prices}
               selected={fromToken}
               onChange={setFromToken}
               disabledTokens={[toToken]}
@@ -122,6 +126,7 @@ export default function SwapForm() {
           <div className="flex items-center gap-3">
             <TokenSelector
               tokens={tokens}
+              prices={prices}
               selected={toToken}
               onChange={setToToken}
               disabledTokens={[fromToken]}
