@@ -31,6 +31,7 @@ Users can select tokens, input amounts, and see real-time conversion based on li
 
 ```bash
 git clone https://github.com/huynhthienphuc9775/code-challenge
+cd code-challenge
 cd src
 cd problem2
 ```
